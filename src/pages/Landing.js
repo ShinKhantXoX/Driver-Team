@@ -234,16 +234,85 @@ const LandingPage = () => {
 
                         <div className=" bg-[#F1F1F1] rounded-[20px] p-[20px]">
 
-                            <div className=" flex items-center justify-start gap-4">
+                            <div className=" mt-5 flex items-center justify-start gap-4">
                                 <img src={"phone-call.svg"} />
                                 <p className=" font-semibold">(+95) 9882577171</p>
                             </div>
 
+                            <div className=" mt-5 flex items-center justify-start gap-4">
+                                <img src={"mail.svg"} />
+                                <p className=" font-semibold">driverteam7@gmail.com</p>
+                            </div>
+
+                            <div className=" mt-5 flex items-center justify-start gap-4">
+                                <img src={"gps.svg"} />
+                                <p className=" font-semibold">791</p>
+                            </div>
+
+                            <div className=" mt-5 flex items-center justify-start gap-4">
+                                <img src={"facebook.svg"} />
+                                <p className=" font-semibold">Driverteam7</p>
+                            </div>
+
+                            <div className=" mt-5 flex items-center justify-start gap-4">
+                                <img src={"instagram.svg"} />
+                                <p className=" font-semibold">Driverteam7</p>
+                            </div>
+
+                            <div className=" mt-5 flex items-center justify-start gap-4">
+                                <img src={"twitter.svg"} />
+                                <p className=" font-semibold">Driverteam7</p>
+                            </div>
+
+                        </div>
+
+                        <div className="mt-10">
+                            <img src={"about-us-img.svg"} />
                         </div>
 
                     </div>
 
-                    <div className=" col-span-12 md:col-span-6">
+                    <div className=" col-span-12 md:col-span-6 mt-10 md:mt-0">
+
+                        <div className="bg-[#F1F1F1] rounded-[20px] p-[20px] py-[30px]">
+
+                            <h3 className="text-center text-xl font-bold">Get Started with a free quotation</h3>
+
+                            <form>
+
+                                <label className="mt-5 text-lg font-semibold block">Title</label>
+                                <div className=" mt-3 w-full h-[55px] px-[20px] flex justify-start items-center bg-white rounded-[20px]">
+                                    <div>
+                                        <img src={"text.svg"} />
+                                    </div>
+                                    <input className=" ml-7 w-full outline-none" placeholder="Enter your Title" />
+                                </div>
+
+                                <label className="mt-5 text-lg font-semibold block">Email</label>
+                                <div className=" mt-3 w-full h-[55px] px-[20px] flex justify-start items-center bg-white rounded-[20px]">
+                                    <div>
+                                        <img src={"directbox-notif.svg"} />
+                                    </div>
+                                    <input className=" ml-5 w-full outline-none" placeholder="Enter your Email" />
+                                </div>
+
+                                <label className="mt-5 text-lg font-semibold block">Message</label>
+                                <div className=" mt-3 w-full h-[155px] px-[20px] flex justify-start items-center bg-white rounded-[20px]">
+                                    <div className="">
+                                        <img className=" mb-[100px]" src={"messages.svg"} />
+                                    </div>
+                                    <textarea rows={5} col={10} className=" ml-7 w-full outline-none" placeholder="Enter your Email" />
+                                </div>
+
+                                <div className="w-full flex items-center justify-center mt-[30px]">
+                                    <button className=" w-[300px] h-[55px] bg-primary text-white font-bold rounded-[20px] flex items-center justify-center">
+                                        Send
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
 
                     </div>
 
