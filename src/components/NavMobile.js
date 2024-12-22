@@ -1,7 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { useIsSmall } from "../lib/mediaHook";
-import NavMobile from "./NavMobile";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const navItems = [
     { label: "Home", path: "/home" },
@@ -13,10 +11,9 @@ const navItems = [
 ];
 
 
-const Navbar = () => {
-
-    const navigate = useNavigate();
-    const isSmall = useIsSmall();
+const NavMobile = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate()
     const [activeLabel, setActiveLabel] = useState();
     const [activeScroll, setActiveScroll] = useState('');
 
@@ -52,7 +49,9 @@ const Navbar = () => {
         })
     }
 
-
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
+    };
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', handleScroll);
@@ -61,26 +60,35 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
-
+    
 
     return (
-        <>
-            {isSmall === false ? (
-                <nav className=" fixed top-0 left-0 z-50 px-[30px] bg-primary w-100 h-[100px]">
-                    <ul className=" header-desktop w-full grid grid-cols-9 items-center justify-center">
-                        <li onClick={() => {
-                                    handleActiveScroll("/home");
-                                    setActiveLabel("Home")
-                                }}>
-                            <a href="/home" onClick={(e) => {
-                                e.preventDefault();
-                            }} ><img onClick={() => navigate("/")} src={"logo.svg"} alt="Logo" /></a>
-                        </li>
+        <nav className="fixed top-0 left-0 z-50 w-full px-[20px] py-[10px] bg-primary flex items-center justify-between">
+            <img onClick={() => navigate("/")} src={"logo.svg"} />
+
+            {/* Hamburger Button */}
+            <button
+                className="p-3 text-black bg-white rounded-md focus:outline-none"
+                onClick={toggleSidebar}
+            >
+                ☰
+            </button>
+
+            {/* Sidebar */}
+            <div
+                className={`fixed top-0 left-0 h-full w-64 bg-primary text-white transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                    } transition-transform duration-300 ease-in-out`}
+            >
+                <button
+                    className="absolute top-3 right-3 text-white"
+                    onClick={toggleSidebar}
+                >
+                    ✕
+                </button>
+                <nav className="p-4">
+                    <ul className="header-desktop space-y-4">
                         <li>
-                            <a href="#" onClick={(e) => {
-                                e.preventDefault();
-                            }}><img onClick={() => navigate("/")} src={"logo-text.svg"} alt="logo-text" /></a>
+                            <img onClick={() => navigate("/")} src={"logo-text.svg"} />
                         </li>
                         {/* Navigation Items */}
                         {navItems.map((item, index) => (
@@ -90,26 +98,18 @@ const Navbar = () => {
                                     handleActiveScroll(item.path);
                                     setActiveLabel(item.label)
                                 }}
-                                className={`text-center text-white font-semibold cursor-pointer`}
+                                className={`text-white font-semibold cursor-pointer`}
                             >
                                 <a href={item.path} onClick={(e) => {
                                     e.preventDefault();
                                 }} className={`${activeScroll == item.path ? "underline underline-offset-8" : ""}`}>{item.label}</a>
                             </li>
                         ))}
-                        <li>
-                            <img src="nav-last.svg" alt="nav last" />
-                        </li>
                     </ul>
                 </nav>
-            ) : (
-                <NavMobile />
-            )}
+            </div>
+        </nav>
+    );
+};
 
-
-
-        </>
-    )
-}
-
-export default Navbar;
+export default NavMobile;
