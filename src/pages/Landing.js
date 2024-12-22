@@ -5,14 +5,14 @@ const LandingPage = () => {
     return (
         <div>
             {/* Start Hero section */}
-            <section className=" w-full">
+            <section id={"/home"} className=" w-full mt-[100px]">
                 <img className=" h-screen md:h-auto object-cover md:object-fill" src="Hero.svg" />
                 <div className=" bg-primary w-full h-[50px] md:h-[100px]"></div>
             </section>
             {/* End Hero Section */}
 
             {/* Start About us section */}
-            <section>
+            <section id={"/about"}>
                 <div className=" px-[20px] md:px-[200px] text-center mt-[100px]">
 
                     <h2 className=" text-2xl font-bold">
@@ -54,7 +54,7 @@ const LandingPage = () => {
             {/* End About us section */}
 
             {/* Start Service section */}
-            <section>
+            <section id={'/service'}>
 
                 <div className=" text-center mt-[100px]">
                     <h1 className=" text-2xl font-semibold">Win saung mu myar</h1>
@@ -104,7 +104,7 @@ const LandingPage = () => {
             {/* End Service section */}
 
             {/* Start Download section */}
-            <section className=" px-[30px] md:px-[120px] py-[80px] bg-primary mt-[100px]">
+            <section id={'/download'} className=" px-[30px] md:px-[120px] py-[80px] bg-primary mt-[100px]">
                 <div className=" grid grid-cols-12 gap-4">
                     <div className=" col-span-12 md:col-span-8 flex justify-start">
                         <div className="">
@@ -143,7 +143,7 @@ const LandingPage = () => {
                     </div>
 
                     <div className="col-span-12 md:col-span-6">
-                        <div className=" grid grid-cols-12 gap-8">
+                        <div className=" grid grid-cols-12 gap-4 md:gap-8">
 
                             <div className=" col-span-12 md:col-span-6">
                                 <div className=" mt-14 grid grid-cols-12 gap-3 xl:gap-5">
@@ -167,7 +167,7 @@ const LandingPage = () => {
 
                             <div className="col-span-12 md:col-span-6">
 
-                                <div className=" grid grid-cols-12 gap-3 xl:gap-5">
+                                <div className=" grid grid-cols-12 gap-4 xl:gap-5">
                                     <div className=" col-span-12">
                                         <div className="w-full md:max-w-[200px] xl:max-w-[300px] min-h-[203px] bg-primary rounded-[20px] py-7">
                                             <img className="mx-auto" src={'toke-face.svg'} />
@@ -200,7 +200,7 @@ const LandingPage = () => {
                     <img src={"thet-tay-kan.svg"} />
                 </div>
 
-                <div className=" mt-[30px] grid grid-cols-12 gap-8">
+                <div className=" mt-[30px] grid grid-cols-12 gap-4 md:gap-8">
 
                     <div className=" col-span-12 md:col-span-6">
                         <div className=" bg-primary rounded-[20px] overflow-hidden">
@@ -220,8 +220,8 @@ const LandingPage = () => {
             </section>
             {/* End Ther Tay Kan section */}
 
-            {/* Start About Us section */}
-            <section className=" px-[30px] mt-[50px]">
+            {/* Start Contact section */}
+            <section id={'/contact'} className=" px-[30px] mt-[50px]">
                 <div className=" text-center">
                     <h3 className=" font-semibold text-xl">Set twal yan</h3>
                     <h4 className=" font-bold text-2xl">{"(About Us Page)"}</h4>
@@ -319,7 +319,7 @@ const LandingPage = () => {
                 </div>
 
             </section>
-            {/* End About Us section */}
+            {/* End Contact section */}
 
 
         </div>
